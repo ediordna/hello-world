@@ -1,33 +1,28 @@
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
-import javax.json.JsonWriter;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
+
+import com.google.gson.Gson;
 
 @Path("message")
 public class MessageRessource {
-	@GET
+	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public String message() {
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response message(String ePakString) {
+		Paket ePak = new Gson().fromJson(ePakString, Paket.class);
+		DbConnection db = new DbConnection();
+		ePak = db.calculateSize(ePak);
+		String packJson = new Gson().toJson(ePak); 
 		
-		
-		 JsonObjectBuilder builder = Json.createObjectBuilder();
-		 builder.add("length", 0);
-		 builder.add("width", 0);
-		 builder.add("height", 0);
-		 builder.add("size", "");
-//		try {
-//			FileWriter fw = new FileWriter("test.txt");
-//			JsonWriter jsonWriter = Json.createWriter(fw);
-//			JsonObject jo = null;
-//			jsonWriter.writeObject(jo);
-//			jsonWriter.close();
-//			fw.close();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
-		return "Yea! ";
+		//Objekt vom Typ Response + String daran bauen
+		ResponseBuilder builder = Response.ok(packJson);
+//		builder.header("Access-Control-Allow-Origin", "*");
+//		builder.header("Access-Control-Allow-Headers", "origin, content-type, accept");
+//		builder.header("Access-Control-Allow-Methods", "POST");
+		return builder.build();
 	}
+
+	
 }
