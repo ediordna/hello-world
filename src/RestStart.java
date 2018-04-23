@@ -5,7 +5,7 @@ import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.net.httpserver.HttpServer;
 @SuppressWarnings("restriction")
-public class Rest_Start {
+public class RestStart {
 	
 	private static int PORT = 8081;
 	
