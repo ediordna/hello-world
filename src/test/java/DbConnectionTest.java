@@ -25,8 +25,5 @@ public class DbConnectionTest {
 		assertEquals("Hätte 0 ergeben sollen",0,ergebnis);
 	}
 	
-	@Test
-	public void OneGurtmaßTest() { //Einzelne Methoden pro Testfall (insgesamt 7)
-		fail("Noch nicht implementiert");
-	}
+	
 }

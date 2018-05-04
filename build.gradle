@@ -12,6 +12,8 @@ task fatJar(type: Jar) {
     with jar
 }
 
+//tasks.check.dependsOn tasks.fatJar brauch ich nicht
+
 //Get dependencies from Maven central repository
 repositories {
     mavenCentral()
