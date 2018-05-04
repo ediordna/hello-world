@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'PacelSizeComponent',  
+        	'Main-Class': 'RestStart'
+    }
+    baseName = project.name
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+//Get dependencies from Maven central repository
+repositories {
+    mavenCentral()
+}
+
+//Project dependencies
+dependencies {
+	//Jersey
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
+	compile group: 'com.sun.jersey', name: 'jersey-bundle', version: '1.19.4'
+	
+	//MySQL
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+	
+	//JUnit
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
