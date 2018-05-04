@@ -13,7 +13,7 @@ public class RestStart {
 		ResourceConfig rc = new PackagesResourceConfig("");
 		rc.getProperties().put(
 				"com.sun.jersey.spi.container.ContainerResponseFilters",
-				"/CORSFilter.java");
+				"CORSFilter");
 		try {
 			HttpServer server;
 			server = HttpServerFactory.create("http://localhost:" + PORT + "/rest", rc);
@@ -23,7 +23,5 @@ public class RestStart {
 			System.out.println("Failed to start server on port " + PORT);
 			e1.printStackTrace();
 		}
-
-
 	}
 }
