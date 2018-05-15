@@ -5,7 +5,7 @@ import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.net.httpserver.HttpServer;
 public class RestStart {
-	
+	//working directory für tomcat im dockerbuild file noch ändern!!!
 	private static int PORT = 8081;
 	
 	public static void main(String[] args) {
@@ -14,6 +14,7 @@ public class RestStart {
 		rc.getProperties().put(
 				"com.sun.jersey.spi.container.ContainerResponseFilters",
 				"CORSFilter");
+		rc.getRootResourceClasses().add(MessageRessource.class); //brauche ich diese Zeile? - Hinweis von Herr Greising 
 		try {
 			HttpServer server;
 			server = HttpServerFactory.create("http://localhost:" + PORT + "/rest", rc);
@@ -25,3 +26,11 @@ public class RestStart {
 		}
 	}
 }
+
+
+// Port 8080 = Tomcat Server
+// Port 8081 = REST Server
+// Port 3306 = mySQL Database
+// Port 8083 = Docker Container parcelsizecomponent
+// Port 8084 = Docker Container parcelwebserver
+// Port 3307 = Docker Container parceldatabase & mySQL database

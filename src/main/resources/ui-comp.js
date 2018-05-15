@@ -54,10 +54,10 @@ angular
 															// nicht mitgeben,
 															// weil controller
 															// sie schon kennt
-							$http.post("http://localhost:8081/rest/message",
+							$http.post("http://parcelsizecomponent/rest/message",
 									this.parcel).then(
 									function success(response) {
-										$rootScope.parcelsize = response.data;
+										$rootScope.parcelsize = response.data;// von localhost:8081 zu parcelsizecomponent umbenannt
 										//console.log(response.data); Ausgabe auf der Konsole
 									// console.log($rootScope.parcelsize);
 									}, function failure(response) {
