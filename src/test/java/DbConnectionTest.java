@@ -59,7 +59,7 @@ public class DbConnectionTest {
 		paket.setHeight(15);
 		paket.setWidth(10);
 		int ergebnis = dbConnection.berechneGurtmass(paket);
-		assertEquals("Hätte 65 ergeben sollen",65,ergebnis);
+		assertEquals("Hätte 60 ergeben sollen",60,ergebnis);
 	}
 	
 	@Test
