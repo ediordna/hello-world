@@ -31,6 +31,6 @@ public class RestStart {
 // Port 8080 = Tomcat Server
 // Port 8081 = REST Server
 // Port 3306 = mySQL Database
-// Port 8083 = Docker Container parcelsizecomponent
+// Port 8083 = Docker Container parcelsizecomponent (-p 8081:8083) da Rest Server auf 8081 hört
 // Port 8084 = Docker Container parcelwebserver
 // Port 3307 = Docker Container parceldatabase & mySQL database
