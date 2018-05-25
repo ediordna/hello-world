@@ -1,3 +1,4 @@
+package parcelp;
 import javax.ws.rs.ext.Provider;
 
 import com.sun.jersey.spi.container.ContainerRequest;

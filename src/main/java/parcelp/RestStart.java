@@ -1,3 +1,4 @@
+package parcelp;
 import java.io.IOException;
 
 import com.sun.jersey.api.container.httpserver.HttpServerFactory;
@@ -10,10 +11,10 @@ public class RestStart {
 	
 	public static void main(String[] args) {
 		
-		ResourceConfig rc = new PackagesResourceConfig("");
+		ResourceConfig rc = new PackagesResourceConfig("parcelp");
 		rc.getProperties().put(
 				"com.sun.jersey.spi.container.ContainerResponseFilters",
-				"CORSFilter");
+				"parcelp.CORSFilter");
 		rc.getRootResourceClasses().add(MessageRessource.class); //brauche ich diese Zeile? - Hinweis von Herr Greising 
 		try {
 			HttpServer server;

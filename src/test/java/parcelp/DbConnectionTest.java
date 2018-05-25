@@ -1,8 +1,12 @@
+package parcelp;
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import parcelp.DbConnection;
+import parcelp.Paket;
 
 //Diese Klasse ist für units-test von nur einer Klasse verantwortlich
 public class DbConnectionTest {

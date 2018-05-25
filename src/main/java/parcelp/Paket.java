@@ -1,3 +1,4 @@
+package parcelp;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
