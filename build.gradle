@@ -7,7 +7,7 @@ task fatJar(type: Jar) {
         attributes 'Implementation-Title': 'PacelSizeComponent',  
         	'Main-Class': 'RestStart'
     }
-    baseName = project.name
+    baseName = 'parcelSizeComponent'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
