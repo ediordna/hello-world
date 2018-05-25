@@ -5,7 +5,7 @@ apply plugin: 'eclipse'
 task fatJar(type: Jar) {
 	manifest {
         attributes 'Implementation-Title': 'PacelSizeComponent',  
-        	'Main-Class': 'RestStart'
+        	'Main-Class': 'parcelp.RestStart'
     }
     baseName = 'parcelSizeComponent'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
