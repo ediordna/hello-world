@@ -6,7 +6,6 @@ import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.net.httpserver.HttpServer;
 public class RestStart {
-	//working directory für tomcat im dockerbuild file noch ändern!!!
 	private static int PORT = 8081;
 	
 	public static void main(String[] args) {
@@ -35,3 +34,8 @@ public class RestStart {
 // Port 8083 = Docker Container parcelsizecomponent (-p 8081:8083) da Rest Server auf 8081 hört
 // Port 8084 = Docker Container parcelwebserver
 // Port 3307 = Docker Container parceldatabase & mySQL database
+//IP-Adresse von Vagrant VM mit Docker: 192.168.50.10
+//IP-Adresse von Vagrant Asset-Server VM: 192.168.50.100
+//lokaler Zugriff auf Webserver Container mittels: http://localhost:8084/parcel-service/
+//Zugriff auf manuell in Phase 7 erstellte VM mittels IP-Adresse: 192.168.50.1
+//Statische IP für Zugriff auf Vagrant VM "192.168.50.10"
