@@ -5,7 +5,7 @@ pipeline {
     environment {
         PATH = "/opt/gradle/gradle-4.7/bin:/opt/vagrant:$PATH"
         RESOURCE_SERVER = '192.168.50.100'
-        RESOURCE_SERVER_ROOT = '/home/user/resources'
+        RESOURCE_SERVER_ROOT = '/home/user/AssetServerVM'
         PHANTOMJS_PATH = '/usr/local/bin/phantomjs'
     }
     
