@@ -1,6 +1,49 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+test {
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }               
+}
+
+task unitTest( type: Test ) {
+    include '**/DbConnectionTest*'
+    
+}
+
+task integrationTest( type: Test ) {
+    include '**/IntegrationTest*'
+}
+
+task UATest( type: Test ) {
+    include '**/UATests*'
+}
+
+
+
 //creates a Jar-File out of the java-files
 task fatJar(type: Jar) {
 	manifest {
@@ -11,7 +54,6 @@ task fatJar(type: Jar) {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
-
 //tasks.check.dependsOn tasks.fatJar brauch ich nicht
 
 //Get dependencies from Maven central repository
