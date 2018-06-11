@@ -18,9 +18,9 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'gradle clean unitTest shadowJar'
-//	  			withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'resource_server', \
-//	                                             keyFileVariable: 'RESOURCE_SERVER_KEY', \
-//	                                             usernameVariable: 'RESOURCE_SERVER_USER')]) {
+	  				withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'resource_server', \
+	                                             keyFileVariable: 'RESOURCE_SERVER_KEY', \
+	                                             usernameVariable: 'RESOURCE_SERVER_USER')]) {
 	                     		sh './scripts/build_docker.sh'  
 	                	}
 	         }
