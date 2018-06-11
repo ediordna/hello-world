@@ -18,7 +18,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'gradle clean unitTest fatJar' //gradle conducts build.gradle with the tasks unitTest and fatJar
-	  				withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'resource_server', \
+	  				withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'ressourceServerCredentials', \
 	                                             keyFileVariable: 'RESOURCE_SERVER_KEY', \
 	                                             usernameVariable: 'RESOURCE_SERVER_USER')]) {
 	                     		sh './scripts/build_docker.sh'  
