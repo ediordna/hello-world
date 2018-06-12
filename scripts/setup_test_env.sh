@@ -14,8 +14,8 @@ scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$R
 echo "Downloading docker images from resource server(2/3)..."
 scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/images/parcelserver ./vm_data/parcelserver.img
 
-echo "Downloading docker images from resource server(3/3)..."
-scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/images/load_balancer ./vm_data/load_balancer.img
+#echo "Downloading docker images from resource server(3/3)..."
+#scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/images/load_balancer ./vm_data/load_balancer.img
 
 echo Download of docker images finished.
 

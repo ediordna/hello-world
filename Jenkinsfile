@@ -24,6 +24,18 @@ pipeline {
 	                     		sh './scripts/build_docker.sh'  
 	                	}
 	         }
+	    stage('Integration') {
+	        steps {
+	        		withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'ressourceServerCredentials', \
+                                             keyFileVariable: 'RESOURCE_SERVER_KEY', \
+                                             usernameVariable: 'RESOURCE_SERVER_USER')]) {
+                    			sh './scripts/setup_test_env.sh'
+}
+	            sh 'gradle integrationTest' //gradle conducts build.gradle with the tasks unitTest and fatJar
+	        }
+
+	    }
+
 		}
 	}
 }
