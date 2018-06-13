@@ -30,7 +30,7 @@ pipeline {
 	        		withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'ressourceServerCredentials', \
                                              keyFileVariable: 'RESOURCE_SERVER_KEY', \
                                              usernameVariable: 'RESOURCE_SERVER_USER')]) {
-                    			sh './scripts/setup_test_env.sh' //behind this scripts is a second one to build the test containers
+                    			sh './scripts/setup_test_env.sh' //behind this script is a second one to build the test containers
 						}
 	            sh 'gradle integrationTest' //gradle conducts build.gradle with the task integrationTest
 	        }

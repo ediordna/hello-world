@@ -4,8 +4,8 @@
 cd /vagrant
 
 # Import the docker images
-docker load -i parcelsize.img
-docker load -i parcelserver.tar 
+docker load -i parcelsizecomponent.tar
+docker load -i parcelwebserver.tar 
 # docker load -i load_balancer.img
 
 # Cleanup
@@ -31,7 +31,7 @@ docker run \
     -e "PORT=1101" \
     -e "CONNECTION_STRING=jdbc:mysql://mysql_parcelsize/parcelsizeDB?user=parcelsize-admin&password=12345" \
     -p 1101:1101 \
-    -d parcelsize
+    -d parcelsizecomponent
     
 echo "Starting parcelsize container (2/2)..."
 docker run \
@@ -40,7 +40,7 @@ docker run \
     -e "PORT=1102" \
     -e "CONNECTION_STRING=jdbc:mysql://mysql_parcelsize/parcelsizeDB?user=parcelsize-admin&password=12345" \
     -p 1102:1102 \
-    -d parcelsize
+    -d parcelsizecomponent
     
 #echo "Starting load balancer for the parcelsize service..."
 #docker run \
@@ -54,6 +54,6 @@ docker run \
     --name parcelserver \
     --network="parcel_net" \
     -p 1200:8080 \
-    -d parcelserver
+    -d parcelwebserver
 
 echo "Docker containers successfully started."
