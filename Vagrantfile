@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
 	 vb.gui = false
      vb.memory = 1024
      vb.cpus = 1
-     vb.name = "Testumgebung"
+     vb.name = "Testumgebung_Vagrant"
   end
   
 
