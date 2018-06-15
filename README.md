@@ -12,5 +12,6 @@ docker run -d --restart always -p:8083:8083 parcelsizecomponent' //start a conta
 docker network ls //list all existing networks
 docker network create NAMEOFNETWORK //creates a new network
 docker network connect NAMEOFNETWORK CONTAINER ID //connects a running container to a network
+/var/lib/jenkins/workspace/Parcelsize-Pipeline //local jenkins location
 
 mysql -h IP_ADRESS DATENBANKNAME
