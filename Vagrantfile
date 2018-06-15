@@ -24,7 +24,10 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.50.10"
+  config.vm.network "private_network",
+      name: "vboxnet0",
+      ip: "192.168.50.10",
+      netmask: "255.255.255.0"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the guest to mount the folder. And the optional third
@@ -38,7 +41,7 @@ Vagrant.configure("2") do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-	 vb.gui = false
+     vb.gui = false
      vb.memory = 1024
      vb.cpus = 1
   end
