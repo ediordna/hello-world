@@ -28,17 +28,13 @@ echo "Starting parcelsize container (1/2)..."
 docker run \
     --name parcelsize1 \
     --network="parcel_net" \
-    -e "PORT=1101" \
-    -e "CONNECTION_STRING=jdbc:mysql://mysql_parcelsize/parcelsizeDB?user=parcelsize-admin&password=12345" \
-    -p 1101:1101 \
+    -p 8081:1101 \
     -d parcelsizecomponent
     
 echo "Starting parcelsize container (2/2)..."
 docker run \
     --name parcelsize2 \
     --network="parcel_net" \
-    -e "PORT=1102" \
-    -e "CONNECTION_STRING=jdbc:mysql://mysql_parcelsize/parcelsizeDB?user=parcelsize-admin&password=12345" \
     -p 1102:1102 \
     -d parcelsizecomponent
     
