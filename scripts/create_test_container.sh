@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Set the base directory
+# Set the base directory (shared folder defined in vagrantfile)
 cd /vagrant
 
 # Import the docker images
 docker load -i parcelsizecomponent.tar
-docker load -i parcelwebserver.tar 
+docker load -i parcelwebserver.tar
 # docker load -i load_balancer.img
 
 # Cleanup
