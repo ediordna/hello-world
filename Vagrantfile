@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
   # using a specific IP.
   config.vm.network "private_network",
    #   name: "vboxnet0",
-      ip: "192.168.50.10",
+      ip: "192.168.56.10",
       netmask: "255.255.255.0"
 
   # Share an additional folder to the guest VM. The first argument is
