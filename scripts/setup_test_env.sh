@@ -20,6 +20,7 @@ echo Download of docker images finished.
 
 # Start the test environment VM 
 vagrant up
+echo "test environment vm started successfully"
 
 # Run the init script in the VM
 cat ./scripts/create_test_container.sh | vagrant ssh
