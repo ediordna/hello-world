@@ -8,9 +8,12 @@ docker load -i parcelsizecomponent.tar
 docker load -i parcelwebserver.tar
 # docker load -i load_balancer.img
 
-# Cleanup
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
+ # Cleanup docker containers
+ docker stop $(docker ps -a -q)
+ docker rm $(docker ps -a -q)
+ 
+# Cleanup dangling / unused docker images
+docker images -qf dangling=true | xargs docker rmi
 
 # Create the internal docker network
 docker network create parcel_net || true
