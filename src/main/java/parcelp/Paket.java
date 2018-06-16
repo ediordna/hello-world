@@ -37,21 +37,21 @@ public class Paket {
 		return true;
 	}
 
-	private String size;
 	private int length;
 	private int width;
 	private int height;
+	private String size;
 
 	public Paket() {
 		super();
 	}
 
-	public Paket(String size, int length, int width, int height) {
+	public Paket(int length, int width, int height, String size) {
 		super();
-		this.size = size;
 		this.length = length;
 		this.width = width;
 		this.height = height;
+		this.size = size;
 	}
 
 	public int getLength() {
