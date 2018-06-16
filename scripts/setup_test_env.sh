@@ -19,6 +19,7 @@ scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$R
 echo Download of docker images finished.
 
 # Start the test environment VM 
+echo "Starting test environment"
 vagrant up
 echo "test environment vm started successfully"
 
