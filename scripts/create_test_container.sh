@@ -28,7 +28,7 @@ echo "Starting parcelsize container (1/2)..."
 docker run \
     --name parcelsize1 \
     --network="parcel_net" \
-    -p 8081:1101 \
+    -p 1101:8081 \
     -d parcelsizecomponent
     
 echo "Starting parcelsize container (2/2)..."
