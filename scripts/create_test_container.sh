@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+# Cleanup docker containers
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+ 
+# Cleanup dangling / unused docker images
+docker images -qf dangling=true | xargs docker rmi
+
 # Set the base directory (shared folder defined in vagrantfile)
 cd /vagrant
 
@@ -8,19 +16,13 @@ docker load -i parcelsizecomponent.tar
 docker load -i parcelwebserver.tar
 # docker load -i load_balancer.img
 
- # Cleanup docker containers
- docker stop $(docker ps -a -q)
- docker rm $(docker ps -a -q)
- 
-# Cleanup dangling / unused docker images
-docker images -qf dangling=true | xargs docker rmi
-
 # Create the internal docker network
 docker network create parcel_net || true
 
 # Create the docker containers
 echo "Starting MySQL container..."
 docker run \
+	-p 3306:3306 \
     --name mysql_parcelsize \
     --network="parcel_net" \
     -e "MYSQL_ROOT_PASSWORD=12345" \

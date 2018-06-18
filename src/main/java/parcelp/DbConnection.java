@@ -8,7 +8,7 @@ public class DbConnection {
 				+ " AND Max_Gurtmass >" + GurtmassEingabe;
 
 		try {
-			String url = "jdbc:mysql://parceldatabase:3306/APS_Datenbank";
+			String url = "jdbc:mysql://mysql_parcelsize:3306/APS_Datenbank";
 			Connection conn = DriverManager.getConnection(url, "www-data", "SWA2018mysql");
 			Statement stmt = conn.createStatement();
 

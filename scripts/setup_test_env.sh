@@ -26,6 +26,6 @@ echo "test environment vm started successfully"
 # Run the init script in the VM
 cat ./scripts/create_test_container.sh | vagrant ssh
 
-sleep 10s
+sleep 15s
 
 echo "VM setup finished"
