@@ -36,9 +36,9 @@ pipeline {
 	        }
 
 	    }
-	 	always {
+     }
+     always {
     		sh './scripts/cleanup_test_env.sh'
-     	}
      }
 }
 
