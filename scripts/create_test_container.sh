@@ -22,7 +22,7 @@ docker network create parcel_net || true
 # Create the docker containers
 echo "Starting MySQL container..."
 docker run \
-	-p 3306:3306 \
+	#-p 3306:3306 \
     --name mysql_parcelsize \
     --network="parcel_net" \
     -e "MYSQL_ROOT_PASSWORD=12345" \

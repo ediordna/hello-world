@@ -3,6 +3,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Paket {
+
+	private int length;
+	private int width;
+	private int height;
+	private String size;
+
 	@Override //automatisch von Eclipse generiert
 	public int hashCode() {
 		final int prime = 31;
@@ -12,6 +18,11 @@ public class Paket {
 		result = prime * result + ((size == null) ? 0 : size.hashCode());
 		result = prime * result + width;
 		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Paket [length=" + length + ", width=" + width + ", height=" + height + ", size=" + size + "]";
 	}
 
 	@Override //automatisch von Eclipse generiert
@@ -36,12 +47,6 @@ public class Paket {
 			return false;
 		return true;
 	}
-
-	private int length;
-	private int width;
-	private int height;
-	private String size;
-
 	public Paket() {
 		super();
 	}
