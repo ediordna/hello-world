@@ -6,7 +6,7 @@ public class DbConnection {
 		int GurtmassEingabe = berechneGurtmass(pak);
 		String SQL_Query = "SELECT Paketgroesse from Groessen where Min_Gurtmass <=" + GurtmassEingabe
 				+ " AND Max_Gurtmass >" + GurtmassEingabe;
-		String url = "jdbc:mysql://192.168.56.10/Datenbank_APS";
+		String url = "jdbc:mysql://mysql_parcelsize/Datenbank_APS";
 		try {
 			Connection conn = DriverManager.getConnection(url, "www-data", "SWA2018mysql");
 			Statement stmt = conn.createStatement();

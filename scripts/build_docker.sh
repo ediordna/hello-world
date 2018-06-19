@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Build the docker image for the parcel size service
-docker build -t parcelsize .
+docker build -t parcelsizecomponent .
 echo Successfully built docker image
 
 # Deploy the docker image to the resource server
-docker save --output parcelsizecomponent.tar parcelsize:latest 
+docker save --output parcelsizecomponent.tar parcelsizecomponent:latest 
 echo Sucessfully created parcelsizecomponent.tar
 
 scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY parcelsizecomponent.tar $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/images/parcelsizecomponent.tar
