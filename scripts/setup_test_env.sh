@@ -10,7 +10,7 @@ cp ./scripts/integration_test_data.sql ./vm_data
 # Download the docker images from the resource server
 echo "Downloading docker images from resource server(1/3)..."
 #scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/images/parcelsizecomponent.tar ./vm_data/parcelsizecomponent.tar
-mv ./parcelsizecomponent.tar ./vm_data/
+cp ./parcelsizecomponent.tar ./vm_data/
 echo "Downloading docker images from resource server(2/3)..."
 scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/images/parcelwebserver.tar ./vm_data/parcelwebserver.tar
 #echo "Downloading docker images from resource server(3/3)..."
