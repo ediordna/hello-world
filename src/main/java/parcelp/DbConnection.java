@@ -25,6 +25,7 @@ public class DbConnection {
 		} catch (Exception e) {
 			System.err.println("Got an exception! ");
 			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}
 		return pak;
 	}
