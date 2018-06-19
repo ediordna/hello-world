@@ -35,8 +35,8 @@ public class RestStart {
 // Port 8084 = Docker Container parcelwebserver
 // Port 3307 = Docker Container parceldatabase & mySQL database
 // Port 1101 = interne 
-//IP-Adresse von Vagrant VM mit Docker: 192.168.50.10
-//IP-Adresse von Vagrant Asset-Server VM: 192.168.50.100
+//IP-Adresse der mit Vagrant erstellten Testumgebung: 192.168.50.10
+//IP-Adresse von Vagrant Asset-Server VM: 192.168.56.100
 //lokaler Zugriff auf Webserver Container mittels: http://localhost:8084/parcel-service/
 //Zugriff auf manuell in Phase 7 erstellte VM mittels IP-Adresse: 192.168.50.1
 //Statische IP für Zugriff auf Vagrant VM "192.168.50.10"

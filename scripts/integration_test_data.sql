@@ -5,8 +5,8 @@ CREATE USER 'www-data'@'localhost' IDENTIFIED BY 'SWA2018mysql';
 CREATE USER 'www-data'@'%' IDENTIFIED BY 'SWA2018mysql';
 
 -- Set user permissions
-GRANT ALL ON parcelsizeDB.* TO 'www-data'@'localhost';
-GRANT ALL ON parcelsizeDB.* TO 'www-data'@'%';
+GRANT ALL ON Datenbank_APS.* TO 'www-data'@'localhost';
+GRANT ALL ON Datenbank_APS.* TO 'www-data'@'%';
 
 USE Datenbank_APS; 
 
