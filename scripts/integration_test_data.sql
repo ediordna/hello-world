@@ -1,8 +1,8 @@
 CREATE DATABASE Datenbank_APS;
 
 -- Create remote user
-CREATE USER 'www-data'@'localhost' IDENTIFIED BY 'SWA2018'; 
-CREATE USER 'www-data'@'%' IDENTIFIED BY 'SWA2018';
+CREATE USER 'www-data'@'localhost' IDENTIFIED BY 'SWA2018mysql'; 
+CREATE USER 'www-data'@'%' IDENTIFIED BY 'SWA2018mysql';
 
 -- Set user permissions
 GRANT ALL ON parcelsizeDB.* TO 'www-data'@'localhost';
@@ -18,12 +18,10 @@ Max_Gurtmass int NOT NULL
 );
 
 -- Insert test data
-LOCK TABLES 'Groessen' WRITE;
-INSERT INTO Groessen(Paketgroesse, Min_Gurtmass, Max_Gurtmass) 
+INSERT INTO Groessen (Paketgroesse, Min_Gurtmass, Max_Gurtmass) 
 values 
 ('XS', 0, 35),
 ('S',35,50),
 ('M',50,65),
 ('L',65,80),
 ('XL',80,300);
-UNLOCK TABLES;
