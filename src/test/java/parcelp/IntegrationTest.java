@@ -25,7 +25,7 @@ public class IntegrationTest {
 			String responseData = response.getEntity(String.class);
 			Paket result = new Gson().fromJson(responseData, Paket.class);
 
-			assertEquals(200, response.getStatus());
-			assertEquals(new Paket(20, 15, 10, "L"), result);
+			assertEquals(200, response.getStatus()); //http Code "okay"
+			assertEquals(new Paket(20, 15, 10, "L"), result); //Prüfung auf den exakten Wert
 		}
 }
