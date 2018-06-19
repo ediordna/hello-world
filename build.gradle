@@ -51,5 +51,9 @@ dependencies {
 	
 	//JUnit
 	testCompile group: 'junit', name: 'junit', version: '4.12'
+	
+	// Selenium
+   testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.12.0'
+   testCompile group: 'com.codeborne', name: 'phantomjsdriver', version: '1.2.1'
 }
 

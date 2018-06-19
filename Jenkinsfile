@@ -36,6 +36,11 @@ pipeline {
 	        }
 
 	    }
+        stage('UAT') {
+            steps {
+                sh 'gradle UATest'
+            }
+		}
      }
      post {
          always {

@@ -13,28 +13,28 @@ angular
 
 							'<div class="w3-row">'
 							+ '<label>Länge</label>'
-							+ '<input class="w3-input" type="text" ng-model="$ctrl.parcel.length">'
+							+ '<input class="w3-input" id="cfg-ps-length" type="text" ng-model="$ctrl.parcel.length">'
 							+ '</div>'
 							+
 
 							'<div class="w3-row">'
 							+ '<label>Breite</label>'
-							+ '<input class="w3-input" type="text" ng-model="$ctrl.parcel.width">'
+							+ '<input class="w3-input" id="cfg-ps-width" type="text" ng-model="$ctrl.parcel.width">'
 							+ '</div>'
 							+
 
 							'<div class="w3-row">'
 							+ '<label>Höhe</label>'
-							+ '<input class="w3-input" type="text" ng-model="$ctrl.parcel.height">'
+							+ '<input class="w3-input" id="cfg-rs-height" type="text" ng-model="$ctrl.parcel.height">'
 							+ '</div>'
 							+
 
 							'<div class="w3-row">'
 							+ '<div class="w3-cell">'
-							+ '<button class="w3-button w3-teal" ng-click="$ctrl.calculateSize()" >Größe berechnen</button>'
+							+ '<button class="w3-button w3-teal" id="btn-ps-calc-size" ng-click="$ctrl.calculateSize()" >Größe berechnen</button>'
 							+ '</div>'
 							+ '<div class="w3-cell">'
-							+ '<p>Paketgröße: {{$root.parcelsize.size}} </p>'
+							+ '<p> id="ps-result-size" Paketgröße: {{$root.parcelsize.size}} </p>'
 							+ '</div>' +
 
 							'</form>' + '</div>',
