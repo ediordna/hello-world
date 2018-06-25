@@ -44,7 +44,7 @@ pipeline {
      }
      post {
          always {
-    	//	sh './scripts/cleanup_test_env.sh'
+   
      	}
      }
      
