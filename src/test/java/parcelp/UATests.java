@@ -19,7 +19,7 @@ public class UATests {
 		DesireCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, 
 				System.getenv("PHANTOMJS_PATH"));
 		driver = new PhantomJSDriver(DesireCaps);
-		baseUrl = "http://www.allgaeu-parcel-service.de:1100/rest/size"; //angepasst
+		baseUrl = "http://192.168.56.10:1200/parcel-service/"; //angepasst für Zugriff auf Webserver (1200 für Port, parcel-service, da in dockerfile festgelegt)
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
