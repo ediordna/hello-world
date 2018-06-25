@@ -13,5 +13,5 @@ scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY parcelsizecomponent.tar 
 echo Successfully deployed parcelsizecomponent.tar to asset server
 
 # Deploy the ui component to the resource server 
-scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY ui/ui-comp.js $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/ui/parcel-size.component.js
+scp -o StrictHostKeyChecking=no -i $RESOURCE_SERVER_KEY ui/ui-comp.js $RESOURCE_SERVER_USER@$RESOURCE_SERVER:$RESOURCE_SERVER_ROOT/ui/ui-comp.js
 echo Successfully deployed ui-comp.js to asset server
