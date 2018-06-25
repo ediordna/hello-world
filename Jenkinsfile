@@ -6,7 +6,7 @@ pipeline {
         PATH = "/opt/gradle/gradle-4.7/bin:/opt/vagrant:$PATH"
         RESOURCE_SERVER = '192.168.56.100'
         RESOURCE_SERVER_ROOT = '/home/user/resources'
-        PHANTOMJS_PATH = '/usr/local/bin/phantomjs'
+        PHANTOMJS_PATH = '/home/patrick/Downloads/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'
     }
     
     stages {
