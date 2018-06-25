@@ -44,7 +44,8 @@ pipeline {
      }
     // post {
     //     always {
-     //		sh './scripts/cleanup_test_env.sh'
+    //		sh './scripts/cleanup_test_env.sh'
+    // 		sh './scripts/cleanup_workspace.sh'
     // 	}
     // }
      
