@@ -41,13 +41,18 @@ pipeline {
                 sh 'gradle UATest'
             }
 		}
+		stage('Performance') {
+        	steps {
+                sh 'gradle gatlingRun'
+        }
+}
      }
-    // post {
-    //     always {
+     post {
+         always {
     //		sh './scripts/cleanup_test_env.sh'
-    // 		sh './scripts/cleanup_workspace.sh'
-    // 	}
-    // }
+     		sh './scripts/cleanup_workspace.sh'
+     	}
+     }
      
 }
 

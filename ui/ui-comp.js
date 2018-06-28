@@ -34,7 +34,7 @@ angular
 							+ '<button class="w3-button w3-teal" id="btn-ps-calc-size" ng-click="$ctrl.calculateSize()" >Größe berechnen</button>'
 							+ '</div>'
 							+ '<div class="w3-cell">'
-							+ '<p id="ps-result-size">Paketgröße: {{$root.parcelsize.size}} </p>'
+							+ '<p id="ps-result-size"> Paketgröße: {{$root.parcelsize.size}} </p>'
 							+ '</div>' +
 
 							'</form>' + '</div>',
