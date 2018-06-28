@@ -1,6 +1,21 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+     		url "https://plugins.gradle.org/m2/"
+    	}
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.3'
+        classpath "gradle.plugin.com.github.lkishalmi.gatling:gradle-gatling-plugin:0.7.3"
+    }
+}
+
+
 test {
     reports {
         junitXml.enabled = false
@@ -33,6 +48,15 @@ task fatJar(type: Jar) {
     with jar
 }
 //tasks.check.dependsOn tasks.fatJar brauch ich nicht
+
+//Run performance tests with gatling via gradle (in the build pipeline)
+apply plugin: "com.github.lkishalmi.gatling"
+
+gatling {
+    simulations = [ 'de.weberf.PerformanceTest' ]
+}
+
+
 
 
 //Get dependencies from Maven central repository
