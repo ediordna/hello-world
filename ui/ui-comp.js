@@ -54,7 +54,7 @@ angular
 															// nicht mitgeben,
 															// weil controller
 															// sie schon kennt
-							$http.post('http://www.allgaeu-parcel-service.de:1101/rest/size',
+							$http.post('http://www.allgaeu-parcel-service.de:1200/rest/size',
 									this.parcel).then(
 									function success(response) {
 										$rootScope.parcelsize = response.data;// von localhost:8081 zu parcelsizecomponent umbenannt
