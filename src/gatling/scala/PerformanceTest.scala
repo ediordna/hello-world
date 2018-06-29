@@ -9,7 +9,7 @@ import io.gatling.jdbc.Predef._
 class PerformanceTest extends Simulation {
 
 	val httpProtocol = http
-		.baseURL("http://www.allgaeu-parcel-service.de:1200")
+		.baseURL("http://192.168.56.10:1200/parcel-service/")
 		.inferHtmlResources()
 		.acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 		.acceptEncodingHeader("gzip, deflate")
@@ -26,9 +26,9 @@ class PerformanceTest extends Simulation {
 	val headers_2 = Map(
 		"Accept" -> "application/json, text/plain, */*",
 		"Content-Type" -> "application/json;charset=utf-8",
-		"Origin" -> "http://www.allgaeu-parcel-service.de:1200")
+		"Origin" -> "http://192.168.56.10:1200/parcel-service")
 
-    	val baseUri = "www.allgaeu-parcel-service.de"
+    	val baseUri = "192.168.56.10:1200"
 
 	val scn = scenario("PerformanceTest")
 		.exec(http("request_0")
