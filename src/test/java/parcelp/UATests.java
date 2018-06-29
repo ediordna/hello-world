@@ -34,8 +34,8 @@ public class UATests {
 		driver.findElement(By.id("cfg-rs-height")).clear();
 		driver.findElement(By.id("cfg-rs-height")).sendKeys("10");
 		driver.findElement(By.id("btn-ps-calc-size")).click();
-	//	Thread.sleep(5000);
-	//	assertEquals("Paketgröße: S", driver.findElement(By.id("ps-result-size")).getText());
+		Thread.sleep(5000);
+		assertEquals("Paketgröße: S", driver.findElement(By.id("ps-result-size")).getText());
 	}
 
 	@After
