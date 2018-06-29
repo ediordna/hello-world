@@ -1,22 +1,25 @@
 #!/bin/bash
 
 
-# Cleanup docker containers
+echo "Cleanup docker containers..."
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
  
-# Cleanup dangling / unused docker images
+echo "Cleanup dangling / unused docker images..."
 docker images -qf dangling=true | xargs docker rmi
+
+echo "Cleanup docker network..."
+docker network rm parcel_net
 
 # Set the base directory (shared folder defined in vagrantfile)
 cd /vagrant
 
-# Import the docker images
+echo "Import the docker images..."
 docker load -i parcelsizecomponent.tar
 docker load -i parcelwebserver.tar
-# docker load -i load_balancer.img
+docker load -i load_balancer.img
 
-# Create the internal docker network
+echo "Create the internal docker network..."
 docker network create parcel_net || true
 
 # Create the docker containers
@@ -43,12 +46,12 @@ docker run \
     -p 1102:1102 \
     -d parcelsizecomponent
     
-#echo "Starting load balancer for the parcelsize service..."
-#docker run \
-	#--name load_balancer \
-	#--network="parcel_net" \
-	#-p 1100:1100 \
-	#-d load_balancer
+echo "Starting load balancer for the parcelsize service..."
+docker run \
+	--name load_balancer \
+	--network="parcel_net" \
+	-p 1100:1100 \
+	-d load_balancer
 	
 echo "Starting parcel server container..."
 docker run \

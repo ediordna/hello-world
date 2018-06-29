@@ -7,6 +7,8 @@ pipeline {
         RESOURCE_SERVER = '192.168.56.100'
         RESOURCE_SERVER_ROOT = '/home/user/resources'
         PHANTOMJS_PATH = '/home/patrick/Downloads/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'
+        
+        
     }
     
     stages {
