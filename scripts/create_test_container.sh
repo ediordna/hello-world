@@ -17,7 +17,7 @@ cd /vagrant
 echo "Import the docker images..."
 docker load -i parcelsizecomponent.tar
 docker load -i parcelwebserver.tar
-docker load -i load_balancer.img
+docker load -i load_balancer.tar
 
 echo "Create the internal docker network..."
 docker network create parcel_net || true
