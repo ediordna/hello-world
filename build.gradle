@@ -53,10 +53,8 @@ task fatJar(type: Jar) {
 apply plugin: "com.github.lkishalmi.gatling"
 
 gatling {
-    simulations = [ 'de.weberf.PerformanceTest' ]
+    simulations = [ 'parcelp.PerformanceTest' ] //stimmt das?
 }
-
-
 
 
 //Get dependencies from Maven central repository
