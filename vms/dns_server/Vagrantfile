@@ -1,0 +1,66 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # Use Ubuntu 16.4 LTS box
+  config.vm.box = "ubuntu/xenial64"
+
+  # Always check for box updates
+  config.vm.box_check_update = true
+
+  # Shared folder
+ # config.vm.synced_folder './config', '/vagrant'
+
+  # Host-only network
+  config.vm.network "private_network",
+      ip: "192.168.56.12"
+
+  # VirtualBox provider-specific configuration
+  config.vm.provider "virtualbox" do |vb|
+     vb.memory = "512"
+     vb.cpus = 1
+  end
+
+  # Installation of bind9 (DNS server)
+  config.vm.provision "install_bind9", type: "shell", inline: <<-SHELL
+     # bind9 installation
+     apt-get update
+     apt-get install -y bind9 bind9utils bind9-doc
+     
+  SHELL
+  
+  # Configuration of bind9 (DNS server)
+  config.vm.provision "reload_config", type: "shell", run: "always", inline: <<-SHELL
+     
+     # stop bind9 to allow configuration changes
+     /etc/init.d/bind9 stop 
+     
+     # replace bind9 configuration files
+     echo Replacing bind9 configuration files...
+	 cp -rf /vagrant/bind9 /etc/default/bind9
+     cp -rf /vagrant/named.conf.options /etc/bind/named.conf.options
+     cp -rf /vagrant/named.conf.local /etc/bind/named.conf.local
+     
+     # copy the zone files
+     echo Copying zone files...
+     mkdir -p /etc/bind/zones
+     chown bind:bind /etc/bind/zones
+     cp /vagrant/zones/* /etc/bind/zones/
+     
+     # restart bind9
+     echo Starting bind9 service...
+     service bind9 start
+     echo bind9 service successfully restarted
+     
+     #install webmin interface
+     echo Installing webmin...
+     apt-get -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+     wget http://prdownloads.sourceforge.net/webadmin/webmin_1.881_all.deb
+     dpkg --install webmin_1.881_all.deb
+     echo Sucessfully installed webmin...
+     #login at http:/192.168.56.12:10000/
+     
+  SHELL
+
+end
