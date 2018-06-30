@@ -17,7 +17,7 @@ public class IntegrationTest {
 		@Test
 		public void simpleIntegrationTest() {
 			Client client = Client.create();
-			WebResource webResource = client.resource("http://192.168.56.10:1101/rest/message"); //Port 1101, da in create_test_container entsprechende Umleitung festgelegt
+			WebResource webResource = client.resource("http://www.allgaeu-parcel-service.de:1100/rest/message"); //Port 1101, da in create_test_container entsprechende Umleitung festgelegt
 
 			Paket parcelDims = new Paket(20, 15, 10, "");
 			ClientResponse response = webResource.entity(new Gson().toJson(parcelDims), MediaType.APPLICATION_JSON).post(ClientResponse.class);
