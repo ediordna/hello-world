@@ -48,15 +48,15 @@ pipeline {
                 sh 'gradle gatlingRun'
         	}
 		}
-		 stage('Manual testing') {
+		stage('Manual testing') {
         	steps {
         		input(message: 'Release ready?')
         	}
-}
+		}
      }
      post {
          always {
-    //		sh './scripts/cleanup_test_env.sh'
+    		sh './scripts/cleanup_test_env.sh'
      		sh './scripts/cleanup_workspace.sh'
      		gatlingArchive() //creates nice charts
      	}
