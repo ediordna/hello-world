@@ -46,7 +46,12 @@ pipeline {
 		stage('Performance') {
         	steps {
                 sh 'gradle gatlingRun'
-        }
+        	}
+		}
+		 stage('Manual testing') {
+        	steps {
+        		input(message: 'Release ready?')
+        	}
 }
      }
      post {
