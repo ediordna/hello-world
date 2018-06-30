@@ -1,2 +1,2 @@
 echo "Cleaning up workspace..."
-rm parcelsizecomponent
+rm parcelsizecomponent.tar
