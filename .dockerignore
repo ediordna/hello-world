@@ -1,0 +1,16 @@
+build/classes/*
+build/reports/*
+build/resources/*
+build/test-results/*
+build/tmp/*
+
+docker/*
+scripts/*
+src/*
+ui/*
+vm_data/*
+vms/*
+
+Jenkinsfile
+build.gradle
+README.md
