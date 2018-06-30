@@ -36,10 +36,10 @@ class PerformanceTest extends Simulation {
 			.headers(headers_0))
 		.pause(8)
 		.exec(http("size-request")
-			.options("http://" + baseUri + ":1100/rest/size")
+			.options("http://" + baseUri + "/rest/size")
 			.headers(headers_1)
 			.resources(http("request_2")
-			.post("http://" + baseUri + ":1100/rest/size")
+			.post("http://" + baseUri + "/rest/size")
 			.headers(headers_2)
 			.body(RawFileBody("parcelsize_request.txt"))))
 
