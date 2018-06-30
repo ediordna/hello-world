@@ -26,9 +26,9 @@ class PerformanceTest extends Simulation {
 	val headers_2 = Map(
 		"Accept" -> "application/json, text/plain, */*",
 		"Content-Type" -> "application/json;charset=utf-8",
-		"Origin" -> "http://192.168.56.10:1200/parcel-service")
+		"Origin" -> "http://www.allgaeu-parcel-service.de:1200/parcel-service")
 
-    	val baseUri = "192.168.56.10:1200"
+    	val baseUri = "www.allgaeu-parcel-service.de:1200"
 
 	val scn = scenario("PerformanceTest")
 		.exec(http("request_0")
@@ -46,7 +46,7 @@ class PerformanceTest extends Simulation {
 	setUp(scn.inject(atOnceUsers(100)))
 		.assertions(
             details("size-request").successfulRequests.percent.gt(95),
-            details("size-request").responseTime.max.lt(3000)
+            details("size-request").responseTime.max.lt(10000)
         )
 		.protocols(httpProtocol)
 }
