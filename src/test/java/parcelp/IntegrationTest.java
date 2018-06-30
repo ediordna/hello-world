@@ -17,15 +17,16 @@ public class IntegrationTest {
 		@Test
 		public void simpleIntegrationTest() {
 			Client client = Client.create();
-			WebResource webResource = client.resource("http://www.allgaeu-parcel-service.de:1100/rest/message"); //Port 1101, da in create_test_container entsprechende Umleitung festgelegt
+			WebResource webResource = client.resource("http://www.allgaeu-parcel-service.de:1100/rest/message"); //via DNS Server auf Port 1101, da in create_test_container entsprechende Umleitung festgelegt
 
 			Paket parcelDims = new Paket(20, 15, 10, "");
 			ClientResponse response = webResource.entity(new Gson().toJson(parcelDims), MediaType.APPLICATION_JSON).post(ClientResponse.class);
 
 			String responseData = response.getEntity(String.class);
 			Paket result = new Gson().fromJson(responseData, Paket.class);
-
+			System.out.println(responseData);
 			assertEquals(200, response.getStatus()); //http Code "okay"
 			assertEquals(new Paket(20, 15, 10, "L"), result); //Prüfung auf den exakten Wert
+			
 		}
 }
