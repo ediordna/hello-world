@@ -53,6 +53,7 @@ pipeline {
          always {
     //		sh './scripts/cleanup_test_env.sh'
      		sh './scripts/cleanup_workspace.sh'
+     		gatlingArchive() //creates nice charts
      	}
      }
      
