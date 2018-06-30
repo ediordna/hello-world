@@ -43,7 +43,7 @@ echo "Starting parcelsize container (2/2)..."
 docker run \
     --name parcelsize2 \
     --network="parcel_net" \
-    -p 1102:1102 \
+    -p 1102:8081 \
     -d parcelsizecomponent
     
 echo "Starting load balancer for the parcelsize service..."
