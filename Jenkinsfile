@@ -56,7 +56,7 @@ pipeline {
      }
      post {
          always {
-    		sh './scripts/cleanup_test_env.sh'
+    		//sh './scripts/cleanup_test_env.sh'
      		sh './scripts/cleanup_workspace.sh'
      		junit('**/build/test-results/unitTest/*.xml,**/build/test-results/integrationTest/*.xml')
      		gatlingArchive() //creates nice charts
