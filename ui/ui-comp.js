@@ -5,7 +5,7 @@ angular
 				{
 					transclude : true,
 					template : '<div class="w3-panel w3-card-2">'
-							+ '<div class="w3-container w3-teal">'
+							+ '<div class="w3-container w3-purple">'
 							+ '<h2>Paketgröße</h2>'
 							+ '</div>'
 							+ '<form class="w3-container">'

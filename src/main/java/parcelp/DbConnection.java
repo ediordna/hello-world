@@ -31,7 +31,7 @@ public class DbConnection {
 	}
 
 	public int berechneGurtmass(Paket pack) {
-		int Gurtmass = pack.getLength() + 3 * pack.getWidth() + 2 * pack.getHeight();
+		int Gurtmass = pack.getLength() + 2 * pack.getWidth() + 2 * pack.getHeight();
 		
 		return Gurtmass;
 	}
